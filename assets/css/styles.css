@@ -126,6 +126,16 @@ body.dark-theme {
 .dark-theme::-webkit-scrollbar-thumb:hover {
   background-color: hsl(var(--hue), 8%, 32%);
 }
+.projects__card{
+  border-radius: 50px;
+  transition: 2s;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+}
+.dark-theme .projects__card{
+  transition: 0s;
+  box-shadow:none;
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -335,7 +345,7 @@ body.dark-theme {
 
 .projects__subtitle, 
 .projects__title {
-  color: #fff;
+  color: #000;
 }
 
 .projects__subtitle {
@@ -354,7 +364,11 @@ body.dark-theme {
 .projects__card:hover .projects__modal {
   bottom: 0;
 }
-
+.projects__card:hover img{
+  filter: blur(2px);
+  transition: transform .5s;
+  transform: scale(1.5)
+}
 /*=============== SKILLS ===============*/
 .skills__content {
   row-gap: 3.5rem;
@@ -402,11 +416,12 @@ body.dark-theme {
 .filters [data-content] {
   display: none;
 }
-
 .filters__active[data-content] {
   display: grid;
 }
-
+#skills .filters__active[data-content]{
+  display: flex;
+}
 /* Activate button filter */
 .filter-tab-active {
   background-color: var(--body-color);
